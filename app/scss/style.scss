@@ -3,4 +3,283 @@
 @import 'reset';
 @import 'global';
 
+.header {
+    &__top{
+        background-color: $accent;
+        &__content {
+            padding: 14px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__bottom {
+        background-color: $active;
+        &__navigation {
+        padding: 25px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+    }
+}
+
+.connection {
+    max-width: 470px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &__address {
+        padding-left: 44px;
+    }
+    &__phone {
+        padding-left: 34px;
+    }
+    &__address,
+    &__phone {
+        color: $default;
+        @extend %lato-700;
+        font-size: 13px;
+        line-height: 16px;
+        display: block;
+        transition: color 0.5s;
+        position: relative;
+        &:hover {
+            color: $active;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+    &__address::before {
+        top: -3px;
+        left: 0;
+        height: 22px;
+        width: 32px;
+        background-image: url('../images/icons/address.svg');
+    }
+    &__phone::before {
+        top: -3px;
+        left: 0;
+        height: 22px;
+        width: 23px;
+        background-image: url('../images/icons/phone.svg');
+    }
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    &__link:not(:last-child) {
+        margin-right: 24px;
+    }
+    &__link-text {
+        color: $default;
+        @extend %lato-700;
+        font-size: 13px;
+        line-height: 16px;
+        text-transform: uppercase;
+        transition: color 0.5s;
+        &:hover {
+            color: $active;
+        }
+    }
+}
+
+.logo__img {
+    max-width: 200px;
+    width: 100%;
+    max-height: 60px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header__select {
+    max-width: 240px;
+    width: 100%;
+    min-height: 50px;
+    height: 100%;
+    border: none;
+    text-align: center;
+    padding: 15px 40px 15px 61px;
+    color: $active;
+    @extend %lato-700;
+    line-height: 0.03px;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.header {
+    &__search{
+        position: relative;
+        max-width: 576px;
+        width: 100%;
+        padding-right: 158px;
+        &::before {
+            position: absolute;
+            content: url('../images/icons/search.svg');
+            top: 16px;
+            left: 13px;
+            width: 20px;
+            height: 20px;
+        }
+        &__input {
+            padding: 15px 15px 15px 51px;
+            max-width: 418px;
+            width: 100%;
+            height: 50px;
+            border-radius: 6px 0px 0px 6px;
+            border: none;
+            color: $accent;
+            @extend %lato-400;
+            outline: none;
+        }
+        &__btn {
+            position: absolute; 
+            top: 0;
+            max-width: 158px;
+            height: 50px;
+            cursor: pointer;
+            border-radius: 0px 6px 6px 0px;
+            background-color: $accent;
+            border: none;
+            padding: 15px 52px;
+            color: $default;
+            text-transform: uppercase;
+        }
+    }   
+}
+
+.user {
+    &__nav {
+        display: flex;
+    }
+    &__nav-link {
+        position: relative;
+    }
+    &__nav-link:not(:first-child) {
+        margin-left: 32px;
+    }
+    &__nav-link:last-child {
+        margin-right: 24px;
+    }
+    &__nav-num {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        top: -7px;
+        left: -7px;
+        border-radius: 50%;
+        background-color: $default;
+        font-size: 10px;
+        line-height: 18px;
+        @extend %lato-700;
+        color: #cf3e3b;
+        text-align: center;
+    }
+}
+
+.footer {
+    background-color: $accent;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        border-bottom: 1px solid #ffffff;
+        opacity: 0.1;
+        width: 100%;
+        bottom: 77px;
+        left: 0;
+    }
+}
+
+.footer-top {
+    padding: 30px 0;
+    &__box {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__watching {
+        max-width: 300px;
+        width: 100%;
+    }
+    &__sale {
+        line-height: 14px;
+        @extend %lato-400;
+    }
+    &__mailing {
+        position: relative;
+        max-width: 300px;
+        width: 100%;
+        margin-top: 18px;
+        &__input {
+            padding: 12px;
+            max-width: 182px;
+            width: 100%;
+            height: 40px;
+            border-radius: 6px 0px 0px 6px;
+            border: none;
+            color: #4f4f4f;
+            @extend %lato-400;
+            outline: none;
+            font-size: 14px;
+            line-height: 14px;
+        }
+        &__btn {
+            position: absolute; 
+            top: 0;
+            max-width: 118px;
+            height: 40px;
+            cursor: pointer;
+            border-radius: 0px 6px 6px 0px;
+            background-color: $active;
+            border: none;
+            padding: 12px 10px 12px 14px;
+            color: $default;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+}
+
+.footer {
+    &__list-link {
+        color: $default;
+        @extend %lato-400;
+        margin-bottom: 18px;
+        display: block;
+    }
+    &__list-span:not(:last-child),
+    &__list-icon:not(:last-child) {
+        margin-right: 12px;
+    }   
+
+    &__list-social {
+        display: flex;
+        justify-content: flex-start;
+
+    }
+}
+
+.footer-bottom {
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__accept{
+        display: flex;
+    }
+    &__accept-img:not(:last-child) {
+        margin-right: 24px;
+    }
+}
+
+
+
+
+
 @import 'media';
