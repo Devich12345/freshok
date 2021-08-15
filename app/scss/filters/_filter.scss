@@ -1,0 +1,29 @@
+.filter {
+    display: flex;
+    justify-content: center;
+    &__nav {
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+    &__btn {
+        border: none;
+        background-color: transparent;
+        @extend %lato-700;
+        color: $dark-500;
+        font-size: 15px;
+        line-height: 21px;
+        letter-spacing: 0.03px;
+        padding: 0 2px;
+        cursor: pointer;
+        text-transform: uppercase;
+        border-bottom: 3px solid transparent;
+        transition: border-color 0.5s;
+        &:hover {
+            border-color: $green-200;
+        }
+        &:active {
+            border-color: $green-200;
+        }
+    }
+}
